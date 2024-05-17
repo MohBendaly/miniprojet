@@ -1,0 +1,18 @@
+type game { 
+  id: ID! 
+  nom: String! 
+  price:Int!
+  description: String! 
+  completed: Boolean! 
+  console:[console]
+} 
+ 
+type console { 
+  task(id: ID!): Task 
+  tasks: [Task] 
+} 
+ 
+type Mission { 
+  addTask(title: String!, description: String!, completed: Boolean!): Task 
+  completeTask(id: ID!): Task 
+} 
